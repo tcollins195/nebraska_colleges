@@ -1,1 +1,39 @@
-<?php
+<?php 
+	// Read all lines of the CSV file into an array
+	$lines = file('data/colleges.csv',FILE_IGNORE_NEW_LINES);
+	
+	// Get the line associated with the 'band' paramter in the Query String
+	$college = explode(',', $lines[$_GET['college']]);
+?>
+
+
+
+<h2>Edit Band</h2>
+<form class="form-horizontal" action="actions/edit_college.php" method="post">
+	<input type="hidden" name="linenum" value="<?php echo $_GET['college'] ?>" />
+	<div class="control-group">
+		<label class="control-label" for="college_name">College Name</label>
+		<div class="controls">
+			<?php echo input('college_name', 'required', $college[0]) ?>
+			<!-- <input type="text" name="band_name" placeholder="required" /> -->
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="college_city">City</label>
+		<div class="controls">
+			<?php echo input('college_city', 'required',$college[1]) ?>
+			<!-- <input type="text" name="band_genre" placeholder="required" /> -->
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="college_tuition">Tuition</label>
+		<div class="controls">
+			<?php echo input('college_tuition', 'required',$college[2]) ?>
+			<!-- <input type="text" name="band_numalbums" placeholder="required" /> -->
+		</div>
+	</div>
+	<div class="form-actions">
+		<button type="submit" class="btn btn-warning"><i class="icon-edit icon-white"></i> Edit College</button>
+		<button type="button" class="btn">Cancel</button>
+	</div>
+</form>

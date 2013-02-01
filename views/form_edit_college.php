@@ -34,6 +34,6 @@
 	</div>
 	<div class="form-actions">
 		<button type="submit" class="btn btn-warning"><i class="icon-edit icon-white"></i> Edit College</button>
-		<button type="button" class="btn">Cancel</button>
+		<button type="button" class="btn" onclick="window.history.go(-1)">Cancel</button>
 	</div>
 </form>

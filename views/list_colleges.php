@@ -24,8 +24,8 @@
 				echo "<td>$name</td>";
 				echo "<td>$city</td>";
 				echo "<td>$tution</td>";
-				echo "<td><a href=\"./?p=form_edit_band&band=$i\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a>
-				<a href=\"./actions/delete_band.php?linenum=$i\" class=\"btn btn-danger\"><i class=\"icon-trash icon-white\"></i></a></td>";
+				echo "<td><a href=\"./?p=form_edit_college&college=$i\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a>
+				<a href=\"./actions/delete_college.php?linenum=$i\" class=\"btn btn-danger\"><i class=\"icon-trash icon-white\"></i></a></td>";
 			echo '</tr>';
 
 			$i++;

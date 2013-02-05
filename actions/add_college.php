@@ -1,12 +1,20 @@
 <?php session_start() ?>
 
 <?php 
+if($_POST['college_tuition'] != '') {
+	$find = array(",","$");
+	$formatted_tution = str_replace($find, '', $_POST['college_tuition']);	// get rid of the commas and $ signs
+}
+
 if($_POST['college_name'] != '' &&
 	$_POST['college_city'] != '' &&
-	$_POST['college_tuition'] != '') {
+	is_numeric($formatted_tution)) {
 	
-	$f = fopen('../data/colleges.csv', 'a');
-	fwrite($f, "\n{$_POST['college_name']},{$_POST['college_city']},{$_POST['college_tuition']}");
+	$f = fopen('../data/colleges.csv', 'a');	
+	
+//	fwrite($f, $_POST['band_name'].','.$_POST['band_genre'].','.$_POST['band_numalbums']);
+	
+	fwrite($f, "\n{$_POST['college_name']},{$_POST['college_city']},$formatted_tution");
 	fclose($f);
 	
 	$_SESSION['message'] = array(
@@ -19,7 +27,7 @@ if($_POST['college_name'] != '' &&
 	$_SESSION['POST'] = $_POST;
 	
 	$_SESSION['message'] = array(
-			'text' => 'Please enter all required information.',
+			'text' => 'Please enter all required information correctly.',
 			'type' => 'block'
 	);
 	

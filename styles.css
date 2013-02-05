@@ -1,0 +1,5 @@
+form input[type=text].error {
+	border:1px solid red;
+	background-color:#FFEBF3; /* FFDBDF */
+	
+}	

@@ -6,30 +6,35 @@
 	$college = explode(',', $lines[$_GET['college']]);
 ?>
 
-
-
 <h2>Edit Band</h2>
 <form class="form-horizontal" action="actions/edit_college.php" method="post">
 	<input type="hidden" name="linenum" value="<?php echo $_GET['college'] ?>" />
 	<div class="control-group">
-		<label class="control-label" for="college_name">College Name</label>
+		<label class="control-label" for="college_name">University</label>
 		<div class="controls">
-			<?php echo input('college_name', 'required', $college[0]) ?>
-			<!-- <input type="text" name="band_name" placeholder="required" /> -->
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-home"></i> </span>
+				<?php echo input('college_name', 'required', $college[0]) ?>
+			</div>
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="college_city">City</label>
 		<div class="controls">
-			<?php echo input('college_city', 'required',$college[1]) ?>
-			<!-- <input type="text" name="band_genre" placeholder="required" /> -->
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-map-marker"></i> </span>
+				<?php echo input('college_city', 'required',$college[1]) ?>
+			</div>
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="college_tuition">Tuition</label>
-		<div class="controls">
-			<?php echo input('college_tuition', 'required',$college[2]) ?>
-			<!-- <input type="text" name="band_numalbums" placeholder="required" /> -->
+		<div class="controls">		
+			<div class="input-prepend input-append">
+				<span class="add-on">$</span>
+				<?php echo input('college_tuition', 'required',$college[2]) ?>
+				<span class="add-on">.00</span>
+			</div>
 		</div>
 	</div>
 	<div class="form-actions">

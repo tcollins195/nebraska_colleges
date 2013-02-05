@@ -14,6 +14,13 @@ require('functions.php');
 		
 		<!-- MyBands CSS -->
 		<link rel="stylesheet" type="text/css" href="styles.css" />
+		
+		<!-- jQuery Javascript -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		
+		<!-- My Javascript -->
+		<script src="colleges.js"></script>
+		
 		<title>My Colleges</title>
 	</head>
 	<body>

@@ -18,6 +18,8 @@ function input($name, $placeholder, $value=null) {  // $value is an optional inp
 		} else {
 			$class = '';
 		}
+	} elseif($value == "error") {	/////////////////////////////////////?????????
+		$class = 'class="error"';
 	} elseif($value != null) {
 		$class = '';	// do not mark as error
 	} else {		// No session data
